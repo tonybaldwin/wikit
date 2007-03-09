@@ -1,0 +1,18 @@
+Wikit is a "wiki wiki web" implementation, built with Tcl and MetaKit.
+See http://www.equi4.com/wikit.html for details and news.
+
+Wikit was written by Jean-Claude Wippler <jcw@equi4.com> and drives the
+"Tcler's Wiki", an active collaborative resource <http://mini.net/tcl/>.
+
+With many thanks to all contributors and authors of code used in Wikit:
+
+      Steve Landers - improved markup for documentation, local mode
+          Don Libes - cgi package
+        Kevin Kenny - autoscroll package
+    Andreas Kupries - documentation
+    Colin McCormack - code refactoring
+        <your name> - <tell me>
+
+Hold the author harmless and any lawful use is permitted.
+
+-jcw

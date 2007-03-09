@@ -1,0 +1,180 @@
+2006-12-06 stevel
+   * Changelog: improved markup for documentation
+2006-12-06
+   * Changelog: re-instated, cvstrac is not used after all
+2006-01-12  jcw
+   * gbutton/pkgIndex.tcl: fix for ticket #2, version set to 0.3
+   * wikit/utils.tcl: make sure files are written in UTF-8 format
+2005-11-03  jcw
+   * *: tweaks to bring the system up to date (from Andreas Kupries)
+2005-03-02  jcw
+   * wikithttpd.tcl: typo in error message: "[h]ttpreturn", thx A. Groth
+2005-02-01  jcw
+   * web.tcl: avoid DoS in -httpd via GET /1000000000000000000000000000
+2005-01-07  jcw
+   * db.tcl: fix of bts#107, it failed with "-update"
+   * image.tcl, db.tcl: added autoproxy support, see bts#108
+     this also adds autoproxy, base64, and uri - taken from tcllib 1.7
+2004-09-22  jcw
+   * web.tcl: support WIKIT_WRU_REQ registered edits, thx Daniel Steffen
+   also some tweaks w.r.t. cache flushing and better save message
+2004-09-09  jcw
+   * web.tcl: fix for incorrect WIKIT_BASE links, by Daniel Steffen
+   * {cache,image,lock,search,utils}.tcl: remove trailing emacs comments
+2004-08-20  jcw
+   * cache.tcl: fix bug#97, prevented adding new page in httpd mode
+2004-06-08  jcw
+   * lots: refactored source code, changes by Colin McCormack
+2004-05-31  jcw
+   * format.tcl: change "set info [eval $ip [list $text]]" for Colin M.
+2004-05-29  jcw
+   * web.tcl: added new WIKIT_REVS var to add revision link to each page
+2004-05-25  jcw
+   * web.tcl: strip "Q=" prefix from queries so a form can be used
+2004-05-19  jcw
+   * web.tcl: changes to support usernames via cookies (not set here, but
+     assumed to have been seen through other means, i.e. wru.tcl script).
+     Relies on a new WIKIT_WRU env var to point to special decode script.
+2004-03-25  jcw
+   * web.tcl, wikidoc.tkd: minor tweaks for the March 4th changes, by PS.
+2004-03-04  jcw
+   * wikit.tcl, utils.tcl: changed edit and referenced links to have an
+   edit/ cq reference/ URL prefix, so spiders can be told not to traverse.
+   Idea by Donal Fellows, code changes by Pascal Scheffers - thanks!
+2004-01-10  jcw
+   * web.tcl: removed obsolete chdir (no ill effects in normal operation)
+2003-11-11  jcw
+   * wikithttpd.tcl: additional length tweak by TL to deal with MSIE
+2003-11-10  jcw
+   * wikithttpd.tcl: avoid Content-Length case sensitivity (thx T Lemler).
+2003-10-29  jcw
+   * start.tcl, wikithttpd.tcl, web.tcl: added changes to support r/w mode
+     in the embedded http server mode previously added by Pascal Scheffer
+     Many thanks to Michael Heca for this great enhancement.
+2003-10-14  jcw
+   * web.tcl: fixed a silly cache flush bug, thx AKG
+2003-09-26  jcw
+   * gui.tcl: start local browser for external links when on Windows, and
+   add a status bar current link target (thx Bob Techentin, BTS#69+70)
+2003-09-03  jcw
+   * web.tcl: added AKG's small web tweaks, see http://mini.net/tcl/19
+   * utils.tcl: cleanup the archive view and drop the format prop on open
+2003-09-02  jcw
+   * utils.tcl: fix error when the page name is a big number (thx John T)
+2003-08-20  jcw
+   * web.tcl: added css style for footer use (thx Daniel Steffen)
+2003-06-20  jcw
+   * format.tcl: get rid of extraneous spaces when creating page titles
+2003-06-05  jcw
+   * gui.tcl: fix to allow use of wheelmouse (thx Albrecht Mucha), bts#55
+   * web.tcl: added WIKIT_EMAIL env var for error reporting (LV), bts#13
+   * start.tcl,wikithttpd.tcl,web.tcl: encoding fixes, switch everything
+     to utf-8, CGI and embedded mode (thx, Benjamin Riefenstahl), bts#53
+2003-06-03  jcw
+   * web.tcl: fix so back reference link in cached pages stay valid longer
+2003-05-01  jcw
+   * start.tcl: blech, the new "nolock" logic was wrong, fixed now
+2003-04-30  jcw
+   * web.tcl: forgot to do title quoting on unreferenced page, see Feb 12
+2003-03-18  jcw
+   * start.tcl: added "-nolock" cmdline option to prevent use of lockfile
+2003-03-14  jcw
+   * start.tcl, web.tcl: make wikit -httpd work on Win32 (thx to Steve L)
+   * utils.tcl: graburl -binary 1, to avoid crlf with -update on windows
+   * wikithttpd.tcl: added unset ::_cgi_uservar fix
+2003-03-03  jcw
+   * utils.tcl: fixed locking bug (thx Rohan P)
+2003-02-27  jcw
+   * gui.tcl: small tweaks to fix edit mode (by Tom K)
+2003-02-21  jcw
+   * start.tcl: fix -httpd handling, and catch unkmown options
+   * web.tcl: change date and menu sizes (thx Reinhard M, suggestion#24)
+2003-02-19  jcw
+   * gui.tcl, modify,tcl, utils.tcl, web.tcl: drop special "format" flag
+   * modify,tcl, utils.tcl: drop archive view, use the pages view to
+   generate recent changes page from (multiple edits no longer listed)
+   * gui.tcl: added "-bg black" changes (thx Bryan S, bug#22)
+2003-02-12  jcw
+   * utils.tcl, web.tcl: fixed two cases of quoting in page title names
+2003-02-11  jcw
+   * format.tcl: adjusted regex to pass "&#NNN;" to enable arabic, etc.
+2003-02-06  jcw
+   * support AOLserver: fix by Pascal Scheffers from http://mini.net/tcl/4416
+2003-01-29  jcw
+   * gui.tcl: tweaks to get edit mode wrapping right again (by Tom K)
+2003-01-23  jcw
+   * format.tcl, gui.tcl: changes contributed by Tom Krehbiel (thx!), to
+   improve local Tk mode and make it much more consistent with CGI mode
+2003-01-22  jcw
+   * start.tcl, web.tcl, httpd/: new code to support running an internal
+   httpd server (cli "-httpd port") - courtesy of Pascal Scheffers (thx!)
+2002-12-08  jcw
+   * start.tcl: added quick-intercept to return raw NNN.txt page requests
+   * start.tcl: get rid of pages 10..up when initing a new wiki
+2002-11-23  jcw
+   * format.tcl: try loading new jpeg/png img format handlers (new tkimg)
+   * modify.tcl: changed content sens bug in regsub (in ReplacLink proc)
+2002-11-16  jcw
+   * gui.tcl: changed "darkgrey" to "#404040" to port better (thanks Tom K)
+2002-11-15  jcw
+   * web.tcl: fixed sort order of reference-lists (back-links)
+2002-11-13  jcw
+   * web.tcl: new WIKIT_ADMIN (override) and WIKIT_SAVE (cache save) options
+2002-11-12  jcw
+   * gbutton.tcl: applied latest changes from Steve Landers' gbutton.kit
+   * web.tcl: added a <html>...</html> tag around all pages (thanks, Rolf)
+2002-11-11  jcw
+   * format.tcl: fixup "<pre>\n" in HTML output to drop these newlines
+2002-11-09  jcw
+   * web.tcl: added style sheet support, adapted from Steve Cassidy's code
+   (WIKIT_CSS env var), http://www.ics.mq.edu.au/~cassidy/cgi-bin/wikit/18
+2002-11-05  jcw
+   * web.tcl: back-reference list now includes modification date
+2002-10-21  jcw
+   * start.tcl, modify.tcl, utils.tcl: experimental "-update url" option
+   * web.tcl: image replaces title if it is the first item on a page
+2002-10-08  jcw
+   * gui.tcl: show watch cursor while loading page locally (Steve Landers)
+   * format.tcl: support linking to "file://..." (suggestion Roy Nurmi)
+2002-10-06  jcw
+   * format.tcl, gui.tcl: start search after a small delay to avoid doing
+   the work twice - also added a global page name cache, speeds up rendering
+   of non-trivial pages by at least an order of magnitude (cgi and tk)!
+2002-10-05  jcw
+   * format.tcl, gui.tcl: fixed -images addition, it was still not right,
+   * utils.tcl: changed "-images list" to list current cache contents
+   and implemented local image display, embedding images in Tk text widget
+2002-10-02  jcw
+   * format.tcl: replaced by Andreas Kupries' version - faster & commented
+   * app-wikit.tcl, utils.tcl: added "-images <cmd> option to copy inlined
+   * wikidoc.tkd: removed developer info, as this is a template for end users
+   images (i.e. listed as [http://...(gif,jpg,png)] into the wikit.tkd file.
+2002-09-23  jcw
+   * web.tcl: undoing the 9/11 change, after getting several complaints
+   * web.tcl: fix for encoding issue, as suggested by Ramon Ribo
+2002-09-11  jcw
+   * web.tcl: let Recent Changes page refresh every 5 minutes (S Landers)
+2002-09-10  jcw
+   * web.tcl: don't use REMOTE_HOST, even if set (spurious ip->dns conv's)
+2002-09-05  jcw
+   * web.tcl: pragma no-cache problem fixed in static pages
+2002-08-27  jcw
+   * gui.tcl: solved windows font problem, fix by Neil Winton
+2002-07-11  jcw
+   * main.tcl: adjusted main structure to new starkit startup mechanism
+2002-07-07  jcw
+   * wikidoc.tkd: adjusted all help texts to "starkit" i.s.o. "SD"
+2002-06-21  jcw
+   * format.tcl: changed url parse regexp to accept "http://...:<port>"
+   * modify.tcl: added WIKI_HIST env var to specify external archive area
+   * utils.tcl: removed code to collect recent changes from external dir
+2002-06-20  jcw
+   * gui.tcl,utils.tcl,web.tcl: replace "refs" prop with a separate view
+   (will perform a conversion on startup, first time around - can be slow)
+   * utils.tcl: clear obsolete views in datafile, no longer compatible now
+   * utils.tcl: fix pagevars, it only returned 1st word when given 1 name
+   * web.tcl: better invalidation of page cache when new pages are created
+2002-06-19  jcw
+   * web.tcl: add meta tag to html so edit page does not get indexed
+2002-06-18  jcw
+   * all: cleaned up comments, created the README and ChangeLog files
