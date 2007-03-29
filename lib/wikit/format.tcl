@@ -870,78 +870,78 @@ namespace eval Wikit::Format {
     # type, page-local numeric id and reference text).
     
     proc StreamToHTML {s {cgi ""} {ip ""}} {
-        set result ""
-        set state H   ; # bogus hline as initial state.
-        set vstate "" ; # Initial state of visual FSM
-        set count 0
-        variable html_frag
-        
-        foreach {mode text} $s {
-            switch -exact -- $mode {
-                {}    {append result [quote $text]}
-                b - i {append result $html_frag($mode$text)}
-                g {
-                    if {$cgi == ""} {
-                        append result "\[[quote $text]\]"
-                        continue
-                    }
-                    if {$ip == ""} {
-                        # no lookup, turn into a searchreference
-                        append result \
-                                $html_frag(a_) $cgi$text $html_frag(tc) \
-                                [quote $text] $html_frag(_a)
-                        continue
-                    }
-                    
-                    set info [eval $ip [list $text]]
-                    foreach {id name date} $info break
-                    
-                    if {$id == ""} {
-                        # not found, don't turn into an URL
-                        append result "\[[quote $text]\]"
-                        continue
-                    }
-                    
-                    regsub {^/} $id {} id
-                    if {$date > 0} {
-                        # exists, use ID
-                        append result \
-                                $html_frag(a_) $id $html_frag(tc) \
-                                [quote $text] $html_frag(_a)
-                        continue
-                    }
-                    
-                    # missing, use ID -- editor link on the brackets.
-                    append result \
-                          $html_frag(a_) $id $html_frag(tc) \[ $html_frag(_a) \
-                          [quote $text] \
-                          $html_frag(a_) $id $html_frag(tc) \] $html_frag(_a) \
-                        }
-                u {
-                    append result \
-                            $html_frag(a_) $text $html_frag(tc) \
-                            [quote $text] $html_frag(_a)
-                }
-                x {
-                    if {[regexp {\.(gif|jpg|png)$} $text]} {
-                        append result $html_frag(i_) $text $html_frag(tc)
-                    } else {
-                        append result \
-                                \[ $html_frag(a_) $text $html_frag(tc) \
-                                [incr count] $html_frag(_a) \]
-                    }
-                }
-                T - Q - I - D - U - O - H {
-                    append result $html_frag($state$mode)
-                    set state $mode
-                }
-            }
-        }
-        # Close off the last section.
-        append result $html_frag(${state}_)
-        # Get rid of spurious newline at start of each quoted area.
-        regsub -all "<pre>\n" $result "<pre>" result
-        list $result {}
+	set result ""
+	set state H   ; # bogus hline as initial state.
+	set vstate "" ; # Initial state of visual FSM
+	set count 0
+	variable html_frag
+
+	foreach {mode text} $s {
+	    switch -exact -- $mode {
+		{}    {append result [quote $text]}
+		b - i {append result $html_frag($mode$text)}
+		g {
+		    if {$cgi == ""} {
+			append result "\[[quote $text]\]"
+			continue
+		    }
+		    if {$ip == ""} {
+			# no lookup, turn into a searchreference
+			append result \
+				$html_frag(a_) $cgi$text $html_frag(tc) \
+				[quote $text] $html_frag(_a)
+			continue
+		    }
+
+		    set info [eval $ip [list $text]]
+		    foreach {id name date} $info break
+
+		    if {$id == ""} {
+			# not found, don't turn into an URL
+			append result "\[[quote $text]\]"
+			continue
+		    }
+
+		    regsub {^/} $id {} id
+		    if {$date > 0} {
+			# exists, use ID
+			append result \
+				$html_frag(a_) $id $html_frag(tc) \
+				[quote $text] $html_frag(_a)
+			continue
+		    }
+
+		    # missing, use ID -- editor link on the brackets.
+		    append result \
+			    $html_frag(a_) $id $html_frag(tc) \[ $html_frag(_a) \
+			    [quote $text] \
+			    $html_frag(a_) $id $html_frag(tc) \] $html_frag(_a) \
+		}
+		u {
+		    append result \
+			    $html_frag(e_) $text $html_frag(tc) \
+			    [quote $text] $html_frag(_a)
+		}
+		x {
+		    if {[regexp {\.(gif|jpg|png)$} $text]} {
+			append result $html_frag(i_) $text $html_frag(tc)
+		    } else {
+			append result \
+				\[ $html_frag(e_) $text $html_frag(tc) \
+				[incr count] $html_frag(_a) \]
+		    }
+		}
+		T - Q - I - D - U - O - H {
+		    append result $html_frag($state$mode)
+		    set state $mode
+		}
+	    }
+	}
+	# Close off the last section.
+	append result $html_frag(${state}_)
+	# Get rid of spurious newline at start of each quoted area.
+	regsub -all "<pre>\n" $result "<pre>" result
+	list $result {}
     }
     
     proc quote {q} {
@@ -990,12 +990,14 @@ namespace eval Wikit::Format {
     vs D I           <dt> ;vs D D           <dd>  ;vs D H  "</dl><hr size=1>"  ;vs D _  </dl>
     vs H I       <dl><dt> ;vs H D       <dl><dd>  ;vs H H       "<hr size=1>"  ;vs H _     {}
     rename vs {}
-    
+
+    # 20-01-2005 added rel="nofollow" to all external urls
     array set html_frag {
-	a_ {<a href="}  b0 </b>
-	_a {</a>}       b1 <b>
-        i_ {<img src="} i0 </i>
-	tc {">}         i1 <i>
+	e_ {<a rel="nofollow" href="}  b0 </b>
+	a_ {<a href="}                 b0 </b>
+	_a {</a>}                      b1 <b>
+	i_ {<img src="}                i0 </i>
+	tc {">}                        i1 <i>
     } ; # "
     
     # =========================================================================
