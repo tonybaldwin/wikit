@@ -1,4 +1,5 @@
-# These routines are used when WiKit is called for use with Tk
+# gui.tcl -- These routines are used when WiKit is called for use with Tk
+# originally written by Jean-Claude Wippler, 2000..2007 - may be used freely
 
 # Data structures ...
 #

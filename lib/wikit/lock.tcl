@@ -1,4 +1,5 @@
-# Wikit locking
+# lock.tcl -- Wikit locking
+# originally written by Jean-Claude Wippler, 2000..2007 - may be used freely
 #
 # AcquireLock - lock wikit by writing a lockfile
 # ReleaseLock - unlock wikit by deleting lockfile

@@ -1,4 +1,5 @@
-# Wikit search interface
+# search.tcl -- Wikit search interface
+# originally written by Jean-Claude Wippler, 2000..2007 - may be used freely
 #
 # SearchList - return a list of search results specified by searchKey and searchLong
 # SearchResults - format a search specified by searchKey and searchLong

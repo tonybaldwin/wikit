@@ -1,4 +1,5 @@
-# Wikit Cache - Caches page titles in an array, to speed access
+# cache.tcl -- Caches page titles in an array, to speed access
+# originally written by Jean-Claude Wippler, 2000..2007 - may be used freely
 #
 # BuildTitleCache - traverse pages and cache their titles
 # AdjustTitleCache - change a title in the cache

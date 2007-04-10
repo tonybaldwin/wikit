@@ -1,4 +1,5 @@
-# Wikit startup code, locks and chooses between CGI and Tk mode
+# start.tcl -- Wikit startup code, locks and chooses between CGI and Tk mode
+# originally written by Jean-Claude Wippler, 2000..2007 - may be used freely
 
 package provide app-wikit 0.1
 if {[catch { package require Mk4tcl }]} {

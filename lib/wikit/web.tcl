@@ -1,4 +1,5 @@
-# These routines are used when WiKit is called from CGI
+# web.tcl -- These routines are used when WiKit is called from CGI
+# originally written by Jean-Claude Wippler, 2000..2007 - may be used freely
 
 package provide Web 1.0
 

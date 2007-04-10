@@ -1,4 +1,5 @@
-# Wikit Image handling
+# image.tcl -- Wikit Image handling
+# originally written by Jean-Claude Wippler, 2000..2007 - may be used freely
 #
 # LocalImages - clear/scan/get/list/local images
 

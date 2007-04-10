@@ -1,4 +1,5 @@
-# Formatter for wiki markup text, CGI as well as GUI
+# format.tcl -- Formatter for wiki markup text, CGI as well as GUI
+# originally written by Jean-Claude Wippler, 2000..2007 - may be used freely
 
 package provide Wikit::Format 1.1
 

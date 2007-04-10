@@ -1,4 +1,5 @@
-# Collection of low-level Wiki database accessors and mutators
+# db.tcl -- Collection of low-level Wiki database accessors and mutators
+# originally written by Jean-Claude Wippler, 2000..2007 - may be used freely
 #
 # admin:
 # Wiki - 

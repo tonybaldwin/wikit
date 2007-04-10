@@ -1,4 +1,6 @@
-2006-12-06 stevel
+2007-04-10  jcw
+   * added my name as original author to all relevant source files
+2006-12-06  stevel
    * Changelog: improved markup for documentation
 2006-12-06
    * Changelog: re-instated, cvstrac is not used after all

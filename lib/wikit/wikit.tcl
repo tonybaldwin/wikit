@@ -1,4 +1,5 @@
-# Set up for embedded use
+# wikit.tcl -- Set up for embedded use
+# originally written by Jean-Claude Wippler, 2000..2007 - may be used freely
 
 package provide Wikit 1.0
 package require Tk

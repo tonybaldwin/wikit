@@ -1,8 +1,8 @@
 Wikit is a "wiki wiki web" implementation, built with Tcl and MetaKit.
-See http://www.equi4.com/wikit.html for details and news.
+See http://www.equi4.com/starkit/wikit.html for details and news.
 
 Wikit was written by Jean-Claude Wippler <jcw@equi4.com> and drives the
-"Tcler's Wiki", an active collaborative resource <http://mini.net/tcl/>.
+"Tcler's Wiki", an active collaborative resource <http://wiki.tcl.tk/>.
 
 With many thanks to all contributors and authors of code used in Wikit:
 
@@ -15,4 +15,4 @@ With many thanks to all contributors and authors of code used in Wikit:
 
 Hold the author harmless and any lawful use is permitted.
 
--jcw
+-jcw, April 2007

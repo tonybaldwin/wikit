@@ -1,4 +1,5 @@
-# Wikit Utilities
+# utils.tcl -- Wikit Utilities
+# originally written by Jean-Claude Wippler, 2000..2007 - may be used freely
 #
 # RecentChanges - return the Recent Changes special page
 # InfoProc - decode references from a page
