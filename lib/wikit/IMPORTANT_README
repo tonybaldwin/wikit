@@ -13,5 +13,5 @@ Wub/wikitcl project - i.e. being the code that runs the Tclers Wiki
 (http://wiki.tcl.tk)
 
 The remainder of this repository contains the code for running wikit
-as a Starkit - i.e. the dependent packages (in ../lib) and the
-documentation (../doc).
+in the other modes, and as a Starkit - i.e. the dependent packages
+(in ../lib) and the documentation (../doc).
