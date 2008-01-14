@@ -11,6 +11,7 @@ With many thanks to all contributors and authors of code used in Wikit:
         Kevin Kenny - autoscroll package
     Andreas Kupries - documentation
     Colin McCormack - code refactoring
+    Jos Decoster    - improved markup - incl. tables, backrefs, etc
         <your name> - <tell me>
 
 Hold the author harmless and any lawful use is permitted.
